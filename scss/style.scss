@@ -43,6 +43,7 @@ body {
   background: $white;
 
   font-family: 'Montserrat', sans-serif;
+  font-family: 'Mrs Saint Delafield', cursive;
   font-family: 'Noto Sans JP', sans-serif;
   font-family: 'Tangerine', cursive;
 }
@@ -74,6 +75,15 @@ li {
     max-width: none;
     padding: 0 10%;
   }
+
+  @include bq(sm-s) {
+    max-width: none;
+    padding: 0 5%;
+  }
+}
+
+.ja {
+  font-family: $japanese;
 }
 
 .header {
@@ -84,7 +94,6 @@ li {
 
   &__logo {
     display: block;
-
   }
 
   &__nav {
@@ -138,6 +147,7 @@ li {
 }
 
 .main {
+
   &__mv {
     width: 95%;
     max-width: 600px;
@@ -159,6 +169,8 @@ li {
         font-size: 4rem;
         font-weight: bold;
 
+        text-shadow: 3px 3px 2px $lightgray;
+
         text-align: center;
 
         @include bq(sm) {
@@ -167,8 +179,8 @@ li {
       }
 
       &__concept {
-        font-family: $japanese;
-        font-weight: 400;
+        font-style: italic;
+        font-weight: bold;
 
         margin-top: 15%;
 
@@ -176,12 +188,7 @@ li {
         top: 50%;
         left: 0;
         transform: translate(0%, 10%);
-
-        @include bq(sm) {
-          margin-top: 15%;
-        }
       }
-
 
     }
 
@@ -196,19 +203,7 @@ li {
       position: relative;
       overflow: hidden;
 
-      // @include bq(tb-s) {
-      // }
-
-      // @include bq(sm-x) {
-      // }
-
-      // @include bq(sm) {
-      // }
-
       li {
-        // display: block;
-        // text-align: center;
-
         display: flex;
 
         width: 100%;
@@ -254,25 +249,200 @@ li {
           height: auto;
 
           margin-right: 0;
+        }
+      }
+    }
+  }
 
-          @include bq(tb-s) {
-            // width: 300px;
+  .ly-sec {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .sec-title {
+    text-align: center;
+    margin-bottom: 40px;
+
+    &__item {
+      font-size: 1.6rem;
+
+      display: inline-block;
+      width: fit-content;
+
+      position: relative;/*英字テキストの配置基準*/
+
+      padding-top: 50px;/*日本語テキストの上余白*/
+      padding-left: 30px;/*日本語テキストの左余白*/
+
+      white-space: nowrap;
+
+      span {
+        position: relative;/*z-index用*/
+        z-index: 0;
+      }
+
+      /*筆記体装飾*/
+      &::before {
+        content: attr(data-en);/*データ属性の読込*/
+
+        color: $inkgray;
+        font-size: 4rem;
+        font-weight: 400;
+        font-family: 'Mrs Saint Delafield', cursive;;
+
+        // white-space: nowrap;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-5deg);
+      }
+    }
+  }
+
+  .sub-title {
+    text-align: center;
+    margin-bottom: 20px;
+
+    &__item {
+      font-weight: bold;
+      display: inline-block;
+      width: fit-content;
+
+      /*破線装飾*/
+      padding: 0 2em 10px;
+      background-image:
+      repeating-linear-gradient( /*反復線形グラデーション*/
+      90deg, /*斜線するため90°回転*/
+      $lightgray 0px, $inkgray 12px,/*破線線色*/
+      rgba(0 0 0 / 0) 12px,rgba(0 0 0 / 0) 20px /*線間余白*/);
+      background-size: 20px 2px;/*破線サイズ*/
+      background-repeat: repeat-x;/*破線繰返*/
+      background-position: center bottom;
+    }
+  }
+
+  .menu {
+    .ly-group {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+
+    &__price {
+      width: 450px;
+
+      @include bq(sm) {
+        width: 100%;
+      }
+
+      &__item {
+        line-height: 1.5;
+        text-align: center;
+
+        &__title {
+          font-size: 1rem;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          margin-bottom: 10px;
+
+          /*左右横線装飾*/
+          &::after,
+          &::before {
+            content: '';
+            width: 30px; /*テキスト横線長さ*/
+            height: 2px; /*テキスト横線太さ*/
+            background-color: $inkgray;
           }
 
-          @include bq(sm-x) {
-            // width: 220px;
+          &::after {
+            margin-left: 10px; /*テキスト左隙間*/
           }
 
-          @include bq(sm) {
-            // width: 170px;
+          &::before {
+            margin-right: 10px; /*テキスト右隙間*/
+          }
+        }
+
+        &__table {
+          border-collapse:  collapse;
+          text-align: center;
+
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 20px;
+          width: 100%;
+
+
+
+          td {
+            border: 2px solid $lightgray;
+            text-align: left;
+            padding: 10px 20px;
+
+            @include bq(sm) {
+              padding: 10px;
+            }
           }
 
-          @include bq(sm-s) {
-            // width: 150px;
-            // max-width: 45%;
+          .teble-left {
+            width: 60px;
           }
         }
       }
     }
+
+    &__caution {
+
+
+      @include bq(sm) {
+        width: 100%;
+
+      }
+      &__list {
+        margin-left: 1rem;
+
+        li {
+          margin: 20px 0;
+          position: relative;
+
+          &::before {
+            content: "\f14a";
+            color: $inkgray;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+
+            position: absolute;
+            top: 0.3em;
+            left: -1em;
+          }
+        }
+
+        .accent {
+          &::before {
+            position: absolute;
+            top: 1em;
+            left: -1em;
+          }
+        }
+
+        .emphasis {
+          text-emphasis: circle $inkgray;
+          -webkit-text-emphasis: circle $inkgray;
+        }
+      }
+    }
+
+  }
+
+  .design {
+
+  }
+
+  .contact {
+
   }
 }

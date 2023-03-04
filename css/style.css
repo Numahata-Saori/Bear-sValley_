@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 20px;
 }
@@ -21,6 +22,7 @@ html {
 body {
   background: #fff;
   font-family: "Montserrat", sans-serif;
+  font-family: "Mrs Saint Delafield", cursive;
   font-family: "Noto Sans JP", sans-serif;
   font-family: "Tangerine", cursive;
 }
@@ -53,6 +55,16 @@ li {
     max-width: none;
     padding: 0 10%;
   }
+}
+@media screen and (max-width: 400px) {
+  .ly-cont {
+    max-width: none;
+    padding: 0 5%;
+  }
+}
+
+.ja {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .header {
@@ -122,6 +134,7 @@ li {
 .main__mv__text__title {
   font-size: 4rem;
   font-weight: bold;
+  text-shadow: 3px 3px 2px #DEDEDE;
   text-align: center;
 }
 @media screen and (max-width: 480px) {
@@ -130,18 +143,13 @@ li {
   }
 }
 .main__mv__text__concept {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
+  font-style: italic;
+  font-weight: bold;
   margin-top: 15%;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translate(0%, 10%);
-}
-@media screen and (max-width: 480px) {
-  .main__mv__text__concept {
-    margin-top: 15%;
-  }
 }
 .main__mv__img {
   max-height: 600px;
@@ -175,4 +183,144 @@ li {
   width: 45%;
   height: auto;
   margin-right: 0;
+}
+.main .ly-sec {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.main .sec-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.main .sec-title__item {
+  font-size: 1.6rem;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative; /*英字テキストの配置基準*/
+  padding-top: 50px; /*日本語テキストの上余白*/
+  padding-left: 30px; /*日本語テキストの左余白*/
+  white-space: nowrap;
+  /*筆記体装飾*/
+}
+.main .sec-title__item span {
+  position: relative; /*z-index用*/
+  z-index: 0;
+}
+.main .sec-title__item::before {
+  content: attr(data-en); /*データ属性の読込*/
+  color: #AAABAB;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: "Mrs Saint Delafield", cursive;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-5deg);
+}
+.main .sub-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main .sub-title__item {
+  font-weight: bold;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  /*破線装飾*/
+  padding: 0 2em 10px;
+  background-image: repeating-linear-gradient(90deg, #DEDEDE 0px, #AAABAB 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 20px);
+  background-size: 20px 2px; /*破線サイズ*/
+  background-repeat: repeat-x; /*破線繰返*/
+  background-position: center bottom;
+}
+.main .menu .ly-group {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+.main .menu__price {
+  width: 450px;
+}
+@media screen and (max-width: 480px) {
+  .main .menu__price {
+    width: 100%;
+  }
+}
+.main .menu__price__item {
+  line-height: 1.5;
+  text-align: center;
+}
+.main .menu__price__item__title {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  /*左右横線装飾*/
+}
+.main .menu__price__item__title::after, .main .menu__price__item__title::before {
+  content: "";
+  width: 30px; /*テキスト横線長さ*/
+  height: 2px; /*テキスト横線太さ*/
+  background-color: #AAABAB;
+}
+.main .menu__price__item__title::after {
+  margin-left: 10px; /*テキスト左隙間*/
+}
+.main .menu__price__item__title::before {
+  margin-right: 10px; /*テキスト右隙間*/
+}
+.main .menu__price__item__table {
+  border-collapse: collapse;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.main .menu__price__item__table td {
+  border: 2px solid #DEDEDE;
+  text-align: left;
+  padding: 10px 20px;
+}
+@media screen and (max-width: 480px) {
+  .main .menu__price__item__table td {
+    padding: 10px;
+  }
+}
+.main .menu__price__item__table .teble-left {
+  width: 60px;
+}
+@media screen and (max-width: 480px) {
+  .main .menu__caution {
+    width: 100%;
+  }
+}
+.main .menu__caution__list {
+  margin-left: 1rem;
+}
+.main .menu__caution__list li {
+  margin: 20px 0;
+  position: relative;
+}
+.main .menu__caution__list li::before {
+  content: "\f14a";
+  color: #AAABAB;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0.3em;
+  left: -1em;
+}
+.main .menu__caution__list .accent::before {
+  position: absolute;
+  top: 1em;
+  left: -1em;
+}
+.main .menu__caution__list .emphasis {
+  text-emphasis: circle #AAABAB;
+  -webkit-text-emphasis: circle #AAABAB;
 }
