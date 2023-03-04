@@ -1,0 +1,278 @@
+@charset "utf-8";
+
+// レスポンシブ用
+$breakpoints: (
+  "tb-s": "screen and (max-width: 860px)",
+  "sm-x": "screen and (max-width: 600px)",
+  "sm": "screen and (max-width: 480px)",
+  "sm-s": "screen and (max-width: 400px)",
+);
+@mixin bq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// color
+$white: #fff;
+$dark: #2F241B;
+$lightgray: #DEDEDE;
+$inkgray: #AAABAB;
+
+// font
+$cursive: 'Tangerine', cursive;
+$japanese: 'Noto Sans JP', sans-serif;
+
+// Basic font size
+html {
+  font-size: 20px;
+}
+html {
+  @include bq(tb-s) {
+    font-size: 18px;
+  }
+  @include bq(sm-x) {
+    font-size: 16px;
+  }
+  @include bq(sm) {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: $white;
+
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Tangerine', cursive;
+}
+
+a {
+  color: $dark;//文字色デフォルトから変更
+  text-decoration: none;// 下線を非表示
+}
+
+img {
+  object-fit: cover;// アスペクト比
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;// 画像下の余白を消す
+  border-style: none;
+}
+
+li {
+  list-style: none;// マーク非表示
+}
+
+.ly-cont {
+  margin: 0 auto;
+
+  max-width: 860px;
+  width: 100%;
+
+  @include bq(tb-s) {
+    max-width: none;
+    padding: 0 10%;
+  }
+}
+
+.header {
+  background: $lightgray;
+  text-align: center;
+
+  padding: 20px 0;
+
+  &__logo {
+    display: block;
+
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+
+    @include bq(sm-x) {
+      display: block;
+      justify-content: center;
+    }
+
+    // @include bq(tb-s)
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+
+      margin-top: 10px;
+
+      @include bq(sm-x) {
+      }
+
+      .cursive {
+        font-size: 24px;
+
+        @include bq(sm-x) {
+          font-size: 20px;
+        }
+      }
+
+      li {
+        padding-right: 15px;
+
+        &:last-child {
+          padding: 0;
+        }
+
+        img {
+          width: 40px;
+
+          @include bq(sm-x) {
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main {
+  &__mv {
+    width: 95%;
+    max-width: 600px;
+    margin: 40px auto;
+
+    position: relative;
+
+    &__text {
+      width: 80%;
+
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      z-index: 10;
+
+      &__title {
+        font-size: 4rem;
+        font-weight: bold;
+
+        text-align: center;
+
+        @include bq(sm) {
+          font-size: 3.8rem;
+        }
+      }
+
+      &__concept {
+        font-family: $japanese;
+        font-weight: 400;
+
+        margin-top: 15%;
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0%, 10%);
+
+        @include bq(sm) {
+          margin-top: 15%;
+        }
+      }
+
+
+    }
+
+    &__img {
+      max-height: 600px;
+      max-width: 600px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      margin: 0 auto;
+
+      position: relative;
+      overflow: hidden;
+
+      // @include bq(tb-s) {
+      // }
+
+      // @include bq(sm-x) {
+      // }
+
+      // @include bq(sm) {
+      // }
+
+      li {
+        // display: block;
+        // text-align: center;
+
+        display: flex;
+
+        width: 100%;
+
+        &:nth-child(1) {
+          position: absolute;
+          // top: 0;
+          // left: 0;
+        }
+
+        &:nth-child(2) {
+          position: absolute;
+          // top: 20%;
+          // left: 55%;
+          // right: 0;
+
+          justify-content: flex-end;
+          margin-top: 20%;
+        }
+
+        &:nth-child(3) {
+          position: absolute;
+          // left: 5%;
+          // bottom: 0;
+          // margin-right: -30px;
+          // width: 95%;
+
+          // padding-top: 20%;
+          // // padding-left: 20%;
+          // margin-left: 10%;
+
+          // align-items: flex-end;
+          margin-top: 55%;
+          margin-left: 5%;
+
+
+        }
+
+        img {
+          display: block;
+          max-width: 270px;
+          width: 45%;
+          height: auto;
+
+          margin-right: 0;
+
+          @include bq(tb-s) {
+            // width: 300px;
+          }
+
+          @include bq(sm-x) {
+            // width: 220px;
+          }
+
+          @include bq(sm) {
+            // width: 170px;
+          }
+
+          @include bq(sm-s) {
+            // width: 150px;
+            // max-width: 45%;
+          }
+        }
+      }
+    }
+  }
+}
