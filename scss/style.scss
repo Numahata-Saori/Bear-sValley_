@@ -397,16 +397,18 @@ li {
 
     &__caution {
 
-
       @include bq(sm) {
         width: 100%;
-
       }
+
       &__list {
         margin-left: 1rem;
 
         li {
           margin: 20px 0;
+        }
+
+        .check-mark {
           position: relative;
 
           &::before {
@@ -435,10 +437,154 @@ li {
         }
       }
     }
-
   }
 
   .design {
+    &__caution {
+      @extend .menu__caution__list;
+
+      margin-bottom: 40px;
+
+      li {
+        @extend .check-mark;
+      }
+    }
+
+    &__movie {
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
+    &__sample {
+      &__list {
+        column-count: 4;
+
+        @include bq(sm) {
+          column-count: 2;
+        }
+
+        &__item {
+          break-inside: avoid;
+          padding-bottom: 20px;
+
+          /*奇数*/
+          // &:nth-of-type(odd) {
+          // }
+
+          /*偶数*/
+          // &:nth-of-type(even) {
+          // }
+
+          img {
+            border-radius: 20px;
+            display: block;
+            width: 100%;
+          }
+
+          /*1*/
+          &:first-child {
+            img {
+              aspect-ratio: 1 / 1;
+            }
+          }
+
+          &:nth-child(4) {
+            img {
+              aspect-ratio: 1 / 1;
+            }
+          }
+
+          &:nth-child(5) {
+            img {
+              aspect-ratio: 1 / 1;
+            }
+          }
+
+          &:nth-child(8) {
+            img {
+              aspect-ratio: 1 / 1;
+            }
+          }
+
+          /*1.5*/
+          &:nth-child(2) {
+            img {
+              aspect-ratio: 1 / 1.5;
+            }
+          }
+
+          &:nth-child(3) {
+            img {
+              aspect-ratio: 1 / 1.5;
+            }
+          }
+
+          &:nth-child(6) {
+            img {
+              aspect-ratio: 1 / 1.5;
+            }
+          }
+
+          &:nth-child(7) {
+            img {
+              aspect-ratio: 1 / 1.5;
+            }
+          }
+
+          @include bq(sm) {
+            /*1*/
+            &:first-child {
+              img {
+                aspect-ratio: 1 / 1;
+              }
+            }
+
+            &:nth-child(3) {
+              img {
+                aspect-ratio: 1 / 1;
+              }
+            }
+
+            &:nth-child(6) {
+              img {
+                aspect-ratio: 1 / 1;
+              }
+            }
+
+            &:nth-child(8) {
+              img {
+                aspect-ratio: 1 / 1;
+              }
+            }
+
+            /*1.5*/
+            &:nth-child(2) {
+              img {
+                aspect-ratio: 1 / 1.5;
+              }
+            }
+
+            &:nth-child(4) {
+              img {
+                aspect-ratio: 1 / 1.5;
+              }
+            }
+
+            &:nth-child(5) {
+              img {
+                aspect-ratio: 1 / 1.5;
+              }
+            }
+
+            &:nth-child(7) {
+              img {
+                aspect-ratio: 1 / 1.5;
+              }
+            }
+          }
+        }
+      }
+    }
 
   }
 
