@@ -160,29 +160,150 @@ li {
   position: relative;
   overflow: hidden;
 }
-.main__mv__img li {
+.main__mv__img__list {
   display: flex;
   width: 100%;
+  /*画像配置*/
+  /*img設定*/
+  /*box-shadow用*/
+  /*ふわっとスライド*/
 }
-.main__mv__img li:nth-child(1) {
+.main__mv__img__list:nth-child(1) {
   position: absolute;
 }
-.main__mv__img li:nth-child(2) {
+.main__mv__img__list:nth-child(2) {
   position: absolute;
   justify-content: flex-end;
   margin-top: 20%;
 }
-.main__mv__img li:nth-child(3) {
+.main__mv__img__list:nth-child(3) {
   position: absolute;
-  margin-top: 55%;
+  margin-top: 35%;
   margin-left: 5%;
 }
-.main__mv__img li img {
+.main__mv__img__list .mvleft {
+  position: relative;
+}
+.main__mv__img__list .mvright {
+  position: relative;
+  left: 55%;
+}
+.main__mv__img__list .mv {
   display: block;
   max-width: 270px;
   width: 45%;
   height: auto;
   margin-right: 0;
+}
+.main__mv__img__list .shadow::after {
+  content: "";
+  aspect-ratio: 1/1;
+  width: 45%;
+  /* box-shadowの設定 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 10px 10px #fff;
+}
+.main__mv__img__list .shadow2::after {
+  content: "";
+  aspect-ratio: 1/1;
+  width: 45%;
+  /* box-shadowの設定 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 10px 10px #fff;
+}
+.main__mv__img__list .slide {
+  position: absolute;
+  width: 100%;
+  /* スライドアニメーション設定 */
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s; /* 長さ15秒 */
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; /* 無限に再生を繰り返す */
+  -webkit-animation-name: fade;
+          animation-name: fade; /* アニメーション名 */
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease; /* 開始と完了を滑らかにする */
+  opacity: 0;
+  /* フェードイン、フェードアウト設定 */
+}
+.main__mv__img__list .slide:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.main__mv__img__list .slide:nth-child(2) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.main__mv__img__list .slide:nth-child(3) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.main__mv__img__list .fadeIn {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .main .ly-sec {
   margin-top: 40px;
