@@ -129,7 +129,7 @@ li {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 20;
 }
 .main__mv__text__title {
   font-size: 4rem;
@@ -178,7 +178,7 @@ li {
 }
 .main__mv__img__list:nth-child(3) {
   position: absolute;
-  margin-top: 35%;
+  margin-top: 55%;
   margin-left: 5%;
 }
 .main__mv__img__list .mvleft {
@@ -191,7 +191,7 @@ li {
 .main__mv__img__list .mv {
   display: block;
   max-width: 270px;
-  width: 45%;
+  width: 44%;
   height: auto;
   margin-right: 0;
 }
@@ -280,6 +280,51 @@ li {
     opacity: 0;
   }
 }
+.main__mv__img__list .slide2 {
+  position: absolute;
+  right: -55%;
+  width: 100%;
+  /* スライドアニメーション設定 */
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s; /* 長さ15秒 */
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; /* 無限に再生を繰り返す */
+  -webkit-animation-name: fade;
+          animation-name: fade; /* アニメーション名 */
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease; /* 開始と完了を滑らかにする */
+  opacity: 0;
+  /* フェードイン、フェードアウト設定 */
+}
+.main__mv__img__list .slide2:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.main__mv__img__list .slide2:nth-child(2) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.main__mv__img__list .slide2:nth-child(3) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .main__mv__img__list .fadeIn {
   -webkit-animation-name: fadeInAnime;
           animation-name: fadeInAnime;
@@ -327,7 +372,7 @@ li {
 }
 .main .sec-title__item span {
   position: relative; /*z-index用*/
-  z-index: 0;
+  z-index: 100;
 }
 .main .sec-title__item::before {
   content: attr(data-en); /*データ属性の読込*/
@@ -455,6 +500,9 @@ li {
   margin-right: auto;
   margin-bottom: 40px;
   width: 100%;
+}
+.main .design__sample {
+  margin-bottom: 40px;
 }
 .main .design__sample__list {
   display: grid;

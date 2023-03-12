@@ -163,7 +163,7 @@ li {
       left: 50%;
       transform: translate(-50%, -50%);
 
-      z-index: 10;
+      z-index:20;
 
       &__title {
         font-size: 4rem;
@@ -211,14 +211,9 @@ li {
         /*画像配置*/
         &:nth-child(1) {
           position: absolute;
-          // top: 0;
-          // left: 0;
         }
         &:nth-child(2) {
           position: absolute;
-          // top: 20%;
-          // left: 55%;
-          // right: 0;
 
           justify-content: flex-end;
           margin-top: 20%;
@@ -235,7 +230,7 @@ li {
           // margin-left: 10%;
 
           // align-items: flex-end;
-          margin-top: 35%;
+          margin-top: 55%;
           margin-left: 5%;
         }
         .mvleft {
@@ -250,7 +245,7 @@ li {
         .mv {
           display: block;
           max-width: 270px;
-          width: 45%;
+          width: 44%;
           height: auto;
 
           margin-right: 0;
@@ -335,52 +330,52 @@ li {
           }
         }
 
-        // .slide2 {
-        //   position: absolute;
-        //   right: 0;
-        //   width: 100%;
+        .slide2 {
+          position: absolute;
+          right: -55%;
+          width: 100%;
 
-        //   /* スライドアニメーション設定 */
-        //   animation-duration: 9s; /* 長さ15秒 */
-        //   animation-iteration-count: infinite; /* 無限に再生を繰り返す */
-        //   animation-name: fade; /* アニメーション名 */
-        //   animation-timing-function: ease; /* 開始と完了を滑らかにする */
-        //   opacity: 0;
+          /* スライドアニメーション設定 */
+          animation-duration: 9s; /* 長さ15秒 */
+          animation-iteration-count: infinite; /* 無限に再生を繰り返す */
+          animation-name: fade; /* アニメーション名 */
+          animation-timing-function: ease; /* 開始と完了を滑らかにする */
+          opacity: 0;
 
-        //   // animation: fade 15s infinite;
+          // animation: fade 15s infinite;
 
-        //   &:nth-child(1) {
-        //     animation-delay: 0s;
-        //   }
+          &:nth-child(1) {
+            animation-delay: 0s;
+          }
 
-        //   &:nth-child(2) {
-        //     animation-delay: 3s;
-        //   }
+          &:nth-child(2) {
+            animation-delay: 3s;
+          }
 
-        //   &:nth-child(3) {
-        //     animation-delay: 6s;
-        //   }
+          &:nth-child(3) {
+            animation-delay: 6s;
+          }
 
-        //   /* フェードイン、フェードアウト設定 */
-        //   @keyframes fade{
-        //     0% {
-        //         opacity: 0;
-        //     }
-        //     16% {
-        //         opacity: 1;
-        //     }
-        //     33% {
-        //         opacity: 1;
-        //     }
-        //     49% {
-        //         opacity: 0;
-        //     }
-        //     100% {
-        //         opacity: 0;
-        //         // transform: translateX(-10%);/*15秒かけて（0%〜100%）左から右へ10%移動*/
-        //     }
-        //   }
-        // }
+          /* フェードイン、フェードアウト設定 */
+          @keyframes fade{
+            0% {
+                opacity: 0;
+            }
+            16% {
+                opacity: 1;
+            }
+            33% {
+                opacity: 1;
+            }
+            49% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+                // transform: translateX(-10%);/*15秒かけて（0%〜100%）左から右へ10%移動*/
+            }
+          }
+        }
 
         .fadeIn {
           animation-name:fadeInAnime;
@@ -399,8 +394,6 @@ li {
           }
         }
       }
-
-
     }
   }
 
@@ -428,7 +421,7 @@ li {
 
       span {
         position: relative;/*z-index用*/
-        z-index: 0;
+        z-index: 100;
       }
 
       /*筆記体装飾*/
@@ -609,6 +602,8 @@ li {
     }
 
     &__sample {
+      margin-bottom: 40px;
+
       &__list {
         // column-count: 4;
 
