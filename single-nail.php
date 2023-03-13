@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 
 <main class="main">
@@ -56,15 +57,31 @@
           <h4 class="sub-title__item">ソフトジェル or ハードジェル</h4>
         </div>
 
+        <?php
+        $args = array(
+          'post_type' => 'nail', // 投稿タイプ
+          'category_name' => 'nail-price', //カテゴリ
+        );
+        // データの取得
+        $posts = get_posts($args);
+        // カスタムフィールドを取得
+        $cat_posts = new WP_Query($args);
+        ?>
+
+        <?php if(have_posts()) :?>
+        <?php while (have_posts()) : the_post() ; ?>
+
         <div class="menu__price__item">
           <h5 class="menu__price__item__title">デザインネイル</h5>
           <table class="menu__price__item__table">
             <tr>
               <td  class="teble-left" rowspan="2">10本</td>
-              <td>初回一律￥3500(税込み)</td>
+              <!-- <td>初回一律￥3500(税込み)</td> -->
+              <td>初回一律￥<?php echo post_custom('nailprice_design_first'); ?>(税込み)</td>
             </tr>
             <tr>
-              <td>次回以降予約で一律￥3000(税込み)<br>（※リピート様限定）</td>
+              <!-- <td>次回以降予約で一律￥3000(税込み)<br>（※リピート様限定）</td> -->
+              <td>次回以降予約で一律￥<?php echo post_custom('nailprice_design_second'); ?>(税込み)<br>（※リピート様限定）</td>
             </tr>
           </table>
         </div>
@@ -74,10 +91,17 @@
           <table class="menu__price__item__table">
             <tr>
               <td class="teble-left">10本</td>
-              <td>一律￥2000(税込み)</td>
+              <!-- <td>一律￥2000(税込み)</td> -->
+              <td>一律￥<?php echo post_custom('nailprice_simple'); ?></td>
             </tr>
           </table>
         </div>
+
+        <?php endwhile; ?>
+        <?php endif; ?>
+
+        <!-- 使用した投稿データをリセット -->
+        <?php wp_reset_postdata(); ?>
 
         <div class="menu__price__terms">
           <p>※チップ長さ出し&ジェルオフ込み</p>
@@ -131,15 +155,18 @@
             <?php
             // sample-imgを取得
             $args = array(
-              'post_type' => 'naildesign', // 投稿タイプ
+              'post_type' => 'nail', // 投稿タイプ
+              'category_name' => 'sample-img', //カテゴリ
               'orderby' => 'date', // 表示順の基準
               'order' => 'ASC' // 昇順・降順
             );
+            // データの取得
+            // $posts = get_posts($args);
             // カスタムフィールドを取得
             $cat_posts = new WP_Query($args);
             ?>
 
-            <!-- naildesignが1件以上存在するかどうか -->
+            <!-- ネイルサンプルが1件以上存在するかどうか -->
             <?php if($cat_posts->have_posts()) : ?>
               <?php
                 // naildesignが存在するだけループ
@@ -177,7 +204,8 @@
             <?php
             // sample-imgを取得
             $args = array(
-              'post_type' => 'naildesign', // 投稿タイプ
+              'post_type' => 'nail', // 投稿タイプ
+              'category_name' => 'sample-img', //カテゴリ
               'orderby' => 'date', // 表示順の基準
               'order' => 'ASC' // 昇順・降順
             );
@@ -185,7 +213,7 @@
             $cat_posts = new WP_Query($args);
             ?>
 
-            <!-- naildesignが1件以上存在するかどうか -->
+            <!-- ネイルサンプルが1件以上存在するかどうか -->
             <?php if($cat_posts->have_posts()) : ?>
               <?php
                 // naildesignが存在するだけループ
@@ -226,7 +254,8 @@
         <?php
           // sample-imgを取得
           $args = array(
-            'post_type' => 'movie', // 投稿タイプ
+            'post_type' => 'nail', // 投稿タイプ
+            'category_name' => 'nail-movie', //カテゴリ
             'orderby' => 'date', // 表示順の基準
             'order' => 'ASC' // 昇順・降順
           );
@@ -241,10 +270,10 @@
               while($cat_posts->have_posts()) :
                 $cat_posts->the_post();
             ?>
-        <div>
+        <div class="design__movie__item">
           <?php echo post_custom('movie-instagram'); ?>
         </div>
-        <div>
+        <div class="design__movie__item">
           <?php echo post_custom('movie-ticktok'); ?>
         </div>
         <?php
@@ -266,7 +295,7 @@
 
       <div class="contact__info ja">
         <p class="contact__info__text">ご予約、お問い合わせなどはこちら</p>
-        <a href=""><img class="contact__info__line" src="<?php echo get_template_directory_uri(); ?>/img/LINE_AAABAB.png" alt=""></a>
+        <a href="#"><img class="contact__info__line" src="<?php echo get_template_directory_uri(); ?>/img/LINE_AAABAB.png" alt=""></a>
         <p>ご予約の方は名前・住所・電話番号をLINEでご連絡の際にお伝え下さい。</p>
       </div>
     </section>

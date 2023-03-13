@@ -501,6 +501,10 @@ li {
   margin-bottom: 40px;
   width: 100%;
 }
+.main .design__movie__item {
+  margin-left: auto;
+  margin-right: auto;
+}
 .main .design__sample {
   margin-bottom: 40px;
 }
@@ -561,6 +565,9 @@ li {
 }
 .main .design__sample__lay__list .sample-right:nth-child(even) img {
   aspect-ratio: 1/1;
+}
+.main .design__sample__lay .list-right {
+  align-items: flex-end;
 }
 .main .design__sample__lay .list-right {
   align-items: flex-start;
