@@ -185,6 +185,10 @@ li {
       align-content: space-between;
       justify-content: center;
 
+      @include bq(sm-s) {
+        width: 60%;
+      }
+
       &__icon {
         // width: 20%;
         display: inline-block;
@@ -201,9 +205,18 @@ li {
       &__text {
         text-align: center;
         width: 400px;
+
+        @include bq(sm-s) {
+          width: 80%;
+        }
+
         span {
           font-size: 4rem;
           font-weight: 400;
+
+          @include bq(sm-s) {
+            font-size: 2rem;
+          }
         }
       }
     }

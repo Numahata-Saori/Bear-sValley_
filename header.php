@@ -42,7 +42,7 @@
   <div class="after-loading">
     <header class="header">
       <h1 class="header__logo ">
-        <a href="<?php echo get_template_directory_uri(); ?>/#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Bear'sValley logo"></a>
+        <a href="<?php echo home_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Bear'sValley logo"></a>
       </h1>
 
       <!-- TopPageのみ非表示 -->
@@ -58,8 +58,8 @@
 
         <!-- Screen 480px or less is bottom, 480px or more is right -->
         <ul class="header__nav__list">
-          <li><a href="https://www.instagram.com/bear_valley_nail/"><img src="<?php echo get_template_directory_uri(); ?>/img/Instagram_2F241B.png" alt=""></a></li>
-          <li><a href="https://www.tiktok.com/@aco_bear_valley"><img src="<?php echo get_template_directory_uri(); ?>/img/TikTok_2F241B.png" alt=""></a></li>
+          <li><a href="https://www.instagram.com/bear_valley_nail/" target=”_blank” rel="noopener"><img src="<?php echo get_template_directory_uri(); ?>/img/Instagram_2F241B.png" alt=""></a></li>
+          <li><a href="https://www.tiktok.com/@aco_bear_valley" target=”_blank” rel="noopener"><img src="<?php echo get_template_directory_uri(); ?>/img/TikTok_2F241B.png" alt=""></a></li>
         </ul>
       </nav>
       <?php endif; ?>
