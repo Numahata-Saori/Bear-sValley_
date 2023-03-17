@@ -1,0 +1,76 @@
+html {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 860px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Mrs Saint Delafield", cursive;
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Tangerine", cursive;
+}
+
+a {
+  color: #2F241B;
+  text-decoration: none;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+.ly-cont {
+  margin: 0 auto;
+  max-width: 860px;
+  width: 100%;
+}
+@media screen and (max-width: 860px) {
+  .ly-cont {
+    max-width: none;
+    padding: 0 10%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .ly-cont {
+    max-width: none;
+    padding: 0 5%;
+  }
+}
+
+.ja {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.prototype {
+  text-align: center;
+  margin: 100px auto;
+}
+.prototype__text {
+  font-size: 2rem;
+  margin: 100px auto;
+}

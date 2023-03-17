@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+// レスポンシブ用
+$breakpoints: (
+  "tb-s": "screen and (max-width: 860px)",
+  "sm-x": "screen and (max-width: 600px)",
+  "sm": "screen and (max-width: 480px)",
+  "sm-s": "screen and (max-width: 400px)",
+);
+@mixin bq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// color
+$white: #fff;
+$dark: #2F241B;
+$lightgray: #DEDEDE;
+$inkgray: #AAABAB;
+
+// font
+$cursive: 'Tangerine', cursive;
+$japanese: 'Noto Sans JP', sans-serif;
+
+// Basic font size
+html {
+  font-size: 20px;
+}
+html {
+  @include bq(tb-s) {
+    font-size: 18px;
+  }
+  @include bq(sm-x) {
+    font-size: 16px;
+  }
+  @include bq(sm) {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Tangerine', cursive;
+}
+
+a {
+  color: $dark;//文字色デフォルトから変更
+  text-decoration: none;// 下線を非表示
+}
+
+img {
+  object-fit: cover;// アスペクト比
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;// 画像下の余白を消す
+  border-style: none;
+}
+
+li {
+  list-style: none;// マーク非表示
+}
+
+.ly-cont {
+  margin: 0 auto;
+
+  max-width: 860px;
+  width: 100%;
+
+  @include bq(tb-s) {
+    max-width: none;
+    padding: 0 10%;
+  }
+
+  @include bq(sm-s) {
+    max-width: none;
+    padding: 0 5%;
+  }
+}
+
+.ja {
+  font-family: $japanese;
+}
+
+.home {
+  background: $lightgray;
+  height: 100vh;
+}
+
+.home__menu {
+  background: $lightgray;
+  text-align: center;
+  padding-top: 150px;
+  // width: 400px;
+
+  // &__list {
+  //   // display: inline-block;
+  //   text-align: center;
+  //   display: inline;
+  //   // flex-direction: column;
+
+  //   // margin-left: auto;
+  //   // margin-right: auto;
+  //   margin-bottom: 40px;
+
+  //   &__item {
+  //     font-size: 1.6rem;
+  //     font-weight: bold;
+
+  //     display: block;
+  //     width: fit-content;
+  //     // align-items: center;
+
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //     margin-bottom: 20px;
+
+  //     position: relative;/*英字テキストの配置基準*/
+
+  //     padding-top: 50px;/*日本語テキストの上余白*/
+  //     padding-left: 30px;/*日本語テキストの左余白*/
+
+  //     white-space: nowrap;
+
+  //     span {
+  //       position: relative;/*z-index用*/
+  //       z-index: 100;
+  //     }
+
+  //     /*筆記体装飾*/
+  //     &::before {
+  //       content: attr(data-en);/*データ属性の読込*/
+
+  //       color: $inkgray;
+  //       font-size: 4rem;
+  //       font-weight: 400;
+  //       font-family: 'Mrs Saint Delafield', cursive;;
+
+  //       // white-space: nowrap;
+
+  //       position: absolute;
+  //       top: 0;
+  //       left: 0;
+  //       transform: rotate(-5deg);
+  //     }
+  //   }
+
+  //   &__icon {
+  //     // display: flex;
+  //     // justify-content: space-between;
+  //     margin-bottom: 20px;
+
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //     // width: 400px;
+
+  //     img {
+  //       width: 80px;
+
+  //       @include bq(sm-x) {
+  //         width: 40px;
+  //       }
+  //     }
+
+  //     span {
+  //       font-size: 4rem;
+  //       font-weight: 400;
+  //       display: inline-block;
+  //     }
+  //   }
+  // }
+
+  &__list {
+    &__item {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+      width: 600px;
+
+      display: flex;
+      // flex-direction: column;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: center;
+
+      &__icon {
+        // width: 20%;
+        display: inline-block;
+        text-align: left;
+
+        img {
+          width: 80px;
+          @include bq(sm-x) {
+            width: 40px;
+          }
+        }
+      }
+
+      &__text {
+        text-align: center;
+        width: 400px;
+        span {
+          font-size: 4rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

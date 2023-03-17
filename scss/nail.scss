@@ -602,6 +602,7 @@ li {
       &__item {
         margin-left: auto;
         margin-right: auto;
+        max-width: 400px;
       }
 
     }
@@ -777,6 +778,7 @@ li {
 .footer {
   background: $lightgray;
   font-size: 0.8rem;
+  height: 100px;
   text-align: center;
 
   padding: 20px;
@@ -799,6 +801,4 @@ li {
     }
   }
 
-  .copyright {
-  }
 }
