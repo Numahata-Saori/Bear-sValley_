@@ -57,6 +57,11 @@
           <h4 class="sub-title__item">ソフトジェル or ハードジェル</h4>
         </div>
 
+        <div class="menu__price__campaign">
+          <p>オープンキャンペーン</p>
+          <p>￥〇〇</p>
+        </div>
+
         <?php
         $args = array(
           'post_type' => 'nail', // 投稿タイプ
@@ -142,6 +147,7 @@
       <ul class="design__caution ja">
         <li>デザインのメニューはございませんので、持ち込みネイルを推奨しております。</li>
         <li>スカルプチュア可（チップ有り）</li>
+        <li>★</li>
       </ul>
 
       <div class="design__sample ja">

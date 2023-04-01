@@ -415,6 +415,25 @@ li {
     width: 100%;
   }
 }
+.main .menu__price__campaign {
+  background-color: yellow;
+  border-radius: 20px;
+  display: block;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 480px) {
+  .main .menu__price__campaign {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+}
+.main .menu__price__campaign p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 .main .menu__price__item {
   line-height: 1.5;
   text-align: center;

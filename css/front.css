@@ -85,7 +85,7 @@ li {
   align-content: space-between;
   justify-content: center;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .home__menu__list__item {
     width: 60%;
   }
@@ -106,7 +106,7 @@ li {
   text-align: center;
   width: 400px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .home__menu__list__item__text {
     width: 80%;
   }
@@ -115,7 +115,7 @@ li {
   font-size: 4rem;
   font-weight: 400;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .home__menu__list__item__text span {
     font-size: 2rem;
   }

@@ -185,7 +185,7 @@ li {
       align-content: space-between;
       justify-content: center;
 
-      @include bq(sm-s) {
+      @include bq(sm-x) {
         width: 60%;
       }
 
@@ -206,7 +206,7 @@ li {
         text-align: center;
         width: 400px;
 
-        @include bq(sm-s) {
+        @include bq(sm-x) {
           width: 80%;
         }
 
@@ -214,7 +214,7 @@ li {
           font-size: 4rem;
           font-weight: 400;
 
-          @include bq(sm-s) {
+          @include bq(sm-x) {
             font-size: 2rem;
           }
         }
